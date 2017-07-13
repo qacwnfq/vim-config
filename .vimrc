@@ -55,9 +55,25 @@ Plug 'vim-latex/vim-latex', { 'on': 'LATEXToggle' }
 "java
 Plug 'artur-shaik/vim-javacomplete2'
 
-"" Initialize plugin system
+" javascript mode
+Plug 'pangloss/vim-javascript'
+
+" xml mode
+Plug 'sukima/xmledit/'
+
+" Autocomplete
+Plug 'Shougo/neocomplcache.vim'
+
+" Vue mode
+Plug 'posva/vim-vue'
+
+" Initialize plugin system
 call plug#end()
 
+" formatting and highlight groups
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
 filetype plugin on
 filetype indent on
 let g:tex_flavor='latex'
@@ -85,6 +101,8 @@ set history=1000
 set nobackup
 set noswapfile
 set pastetoggle=<F2>
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 " Mapleadercommands
 let mapleader=","
 :map <leader>n :vsp<cr>
@@ -93,6 +111,11 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 nmap <silent> ,/ :nohlsearch<CR>
+:nnoremap <leader>O O<Esc>
+:nnoremap <leader>o o<Esc>
+
+" insert newline without entering insert mode
+
 
 "Latex"
 "g:Tex_DefaultTargetFormat=pdf
