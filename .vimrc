@@ -67,6 +67,11 @@ Plug 'Shougo/neocomplcache.vim'
 " Vue mode
 Plug 'posva/vim-vue'
 
+" Markdown mode
+Plug 'plasticboy/vim-markdown'
+
+" Linting
+Plug 'vim-syntastic/syntastic'
 " Initialize plugin system
 call plug#end()
 
@@ -150,4 +155,15 @@ imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
 nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
+" Linting Eslint
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+:nnoremap <leader>e :SyntasticCheck<Esc>
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'eslint'
