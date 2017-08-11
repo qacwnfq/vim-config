@@ -72,6 +72,8 @@ Plug 'plasticboy/vim-markdown'
 
 " Linting
 Plug 'vim-syntastic/syntastic'
+" vim-autoclose
+Plug 'Townk/vim-autoclose'
 " Initialize plugin system
 call plug#end()
 
@@ -145,7 +147,6 @@ let g:seiya_auto_enable=1
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
 imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-
 nmap <F5> <Plug>(JavaComplete-Imports-Add)
 imap <F5> <Plug>(JavaComplete-Imports-Add)
 
@@ -159,8 +160,11 @@ imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 :nnoremap <leader>e :SyntasticCheck<Esc>
+:nnoremap <leader>t :NERDTreeToggle<Esc>
+:nnoremap <leader>w :w<Esc>
+:nnoremap <leader>x :x<Esc>
+:nnoremap <leader>q :q!<Esc>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
