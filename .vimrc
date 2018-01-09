@@ -74,6 +74,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vim-syntastic/syntastic'
 " vim-autoclose
 Plug 'Townk/vim-autoclose'
+" vim-surround
+Plug 'git://github.com/tpope/vim-surround.git'
 " Initialize plugin system
 call plug#end()
 
